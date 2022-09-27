@@ -51,6 +51,7 @@ export const useUserStore = defineStore("userStore",{
                 console.log(error);
             }
         },
+        ///Promesa que Verifica si existe o no una sesión Activa
         currentUser(){
             return new Promise((resolve, reject) =>{
                 const unsuscribe = onAuthStateChanged(auth, user =>{
