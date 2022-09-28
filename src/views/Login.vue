@@ -44,16 +44,17 @@
   import { ref, computed} from 'vue';
   import {useUserStore} from '../stores/user';
 
+
   const email = ref('');
   const password = ref('');
   const userStore = useUserStore();
+
 
   const handleSumit = () => {
     if(!email.value || !password.value || password.value.length < 6){
       return alert('Debe completar los campos Usuario y Contraseña');
     }
     userStore.loginUser(email.value,password.value);
-    
     // console.log('procesando form');
     // console.log(email.value);
     // console.log(password.value);

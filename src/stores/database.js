@@ -8,8 +8,9 @@ export const useDatabaseStore = defineStore('databaseStore',{
         user:{rol: null, uid: null, id: null}
     }),
     actions:{
-        async saveRoleUser(){
+        async createUser(nombre, apellido, dni, telefono, prestador, aplicador){
             try{
+                
 
             }catch(e){
 

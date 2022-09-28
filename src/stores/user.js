@@ -1,8 +1,9 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithCredential, signOut } from "firebase/auth";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { defineStore, mapActions } from "pinia";
-import { auth } from "../firebaseConfig";
+import { auth, database } from "../firebaseConfig";
 import router from "../router";
+import {useDatabaseStore} from '../stores/database'
 
 export const useUserStore = defineStore("userStore",{
     state: () => ({
@@ -11,11 +12,13 @@ export const useUserStore = defineStore("userStore",{
             loadingSession: false,
     }),
     actions: {
-        async registerUser(email, password){
+        async registerUser(email, password, nombre, apellido, dni, telefono, prestador, aplicador){
             this.loadingUser = true
             try {
                 const { user } = await createUserWithEmailAndPassword(auth, email, password);
-                this.userData = {email: user.email, uid: user.uid};
+                this.userData = {nombre: user.nombre, apellido: user.apellido, email: user.email, uid: user.uid};
+                const dataBaseStore = useDatabaseStore();
+                await dataBaseStore.createUser(nombre, apellido, dni, telefono, prestador, aplicador);
                 router.push('/dashboard');
 
                 // console.log ("El user es:");
