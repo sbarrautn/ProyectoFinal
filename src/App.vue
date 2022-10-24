@@ -1,11 +1,12 @@
 <template>
   <div>
-    <div class="bg-dark" style="border-bottom-left-radius:1rem; border-bottom-right-radius: 1rem; border-top-left-radius:1rem; border-top-right-radius: 1rem;">
+    <div class="bg-dark mt-2" style="border-bottom-left-radius:1rem; border-bottom-right-radius: 1rem; border-top-left-radius:1rem; border-top-right-radius: 1rem;">
       <div class="collapse" id="navbarToggleExternalContent" style="border-top-left-radius:1rem; border-top-right-radius: 1rem;">
         <div class="bg-dark p-2" style="border-top-left-radius:1rem; border-top-right-radius: 1rem;">
-          <div class="h4" ml-2 mr-2>
-          <router-link class="text-white" to="/" v-if="userStore.userData" > Home</router-link>
-        </div>
+        <!--    <div class="h4" ml-2 mr-2>
+                  <router-link class="text-white" to="/" v-if="userStore.userData" > Home</router-link>
+                </div>
+        -->
         <div class="text-white h4" ml-2 mr-2>
           <router-link class="text-white" to="/dashboard" v-if="userStore.userData"> Dashboard</router-link>
         </div> 
