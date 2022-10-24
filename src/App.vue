@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- video con un nav mucho mejor https://www.youtube.com/watch?v=yWJ8bx8uZWE -->
     <div class="bg-dark mt-2" style="border-bottom-left-radius:1rem; border-bottom-right-radius: 1rem; border-top-left-radius:1rem; border-top-right-radius: 1rem;">
       <div class="collapse" id="navbarToggleExternalContent" style="border-top-left-radius:1rem; border-top-right-radius: 1rem;">
         <div class="bg-dark p-2" style="border-top-left-radius:1rem; border-top-right-radius: 1rem;">
